@@ -14,47 +14,36 @@
           transition="scale-transition"
           width="40"
         />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
+        <h1> Project</h1>
       </div>
-
       <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
     </v-app-bar>
 
     <v-content>
-      <HelloWorld/>
+      <project-details 
+        :project-id="projectId"
+        :start-date="startDate"
+        :end-date="endDate"
+      >
+      </project-details>  
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import ProjectDetails from './components/ProjectDetails'
 
 export default {
   name: 'App',
-
   components: {
-    HelloWorld,
+    ProjectDetails
   },
 
   data: () => ({
-    //
+    projectId: 1,
+    startDate: '2020-01-01',
+    endDate: '2020-06-01'
   }),
+  
 };
 </script>
